@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DNA Lab Game</title>
+  <style>
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background-color: #000;
+    }
+    #lab-screen {
+      display: none;
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <div id="lab-screen">
+    <h1>DNA Lab</h1>
+    <p>Welcome to the DNA Lab!</p>
+    <button onclick="returnToHub()">Back to Hub</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const images = {
+      hub: "assets/game/hub_map.png",
+      dna_forest: "assets/game/dna_forest.png",
+      dna_lab: "assets/game/dna_lab.png",
+      player: "assets/game/player.png"
+    };
+
+    let loadedImages = {};
+    let player = { x: 400, y: 300 };
+    let keys = {};
+    let scene = "hub";
+
+    function loadImages(callback) {
+      let count = 0;
+      let total = Object.keys(images).length;
+
+      for (let key in images) {
+        const img = new Image();
+        img.src = images[key];
+        img.onload = () => {
+          loadedImages[key] = img;
+          count++;
+          if (count === total) callback();
+        };
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(loadedImages[scene], 0, 0, canvas.width, canvas.height);
+      ctx.drawImage(loadedImages["player"], player.x, player.y, 50, 50);
+    }
+
+    function update() {
+      if (keys["ArrowUp"]) player.y -= 5;
+      if (keys["ArrowDown"]) player.y += 5;
+      if (keys["ArrowLeft"]) player.x -= 5;
+      if (keys["ArrowRight"]) player.x += 5;
+
+      if (scene === "hub" && player.x < 100 && player.y < 100) {
+        scene = "lab";
+        updateSceneOnBackend(scene);
+        canvas.style.display = "none";
+        document.getElementById("lab-screen").style.display = "block";
+      }
+    }
+
+    function gameLoop() {
+      if (scene !== "lab") {
+        update();
+        draw();
+        requestAnimationFrame(gameLoop);
+      }
+    }
+
+    function returnToHub() {
+      scene = "hub";
+      updateSceneOnBackend(scene);
+      player = { x: 400, y: 300 };
+      document.getElementById("lab-screen").style.display = "none";
+      canvas.style.display = "block";
+      gameLoop();
+    }
+
+    function updateSceneOnBackend(scene) {
+      fetch("http://localhost:5000/update-location", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ location: scene })
+      });
+    }
+
+    window.addEventListener("keydown", e => keys[e.key] = true);
+    window.addEventListener("keyup", e => keys[e.key] = false);
+
+    loadImages(() => {
+      fetch("http://localhost:5000/game-state")
+        .then(res => res.json())
+        .then(data => {
+          scene = data.location || "hub";
+          gameLoop();
+        });
+    });
+  </script>
+</body>
+</html>
