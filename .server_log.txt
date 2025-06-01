@@ -100,3 +100,99 @@ Run in verbose mode to see all warnings.
     Server address: http://127.0.0.1:4101/frontend_2026/
   Server running... press ctrl-c to stop.
 [2025-06-01 13:40:21] ERROR '/assets/game/game.html' not found.
+      Regenerating: 1 file(s) changed at 2025-06-01 14:01:51
+                    game.html
+       Jekyll Feed: Generating feed for posts
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+   ╷
+40 │   margin-bottom: $spacing-unit / 2;
+   │                  ^^^^^^^^^^^^^^^^^
+   ╵
+    ../../../../minima-2.5.1/_sass/minima/_base.scss 40:18  @import
+    minima.scss 48:3                                        @import
+    /Users/rashaalrefai/frontend2/assets/main.scss 1:9      root stylesheet
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+134 │   padding-left: $spacing-unit / 2;
+    │                 ^^^^^^^^^^^^^^^^^
+    ╵
+    ../../../../minima-2.5.1/_sass/minima/_base.scss 134:17  @import
+    minima.scss 48:3                                         @import
+    /Users/rashaalrefai/frontend2/assets/main.scss 1:9       root stylesheet
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+189 │     padding-right: $spacing-unit / 2;
+    │                    ^^^^^^^^^^^^^^^^^
+    ╵
+    ../../../../minima-2.5.1/_sass/minima/_base.scss 189:20  @content
+    minima.scss 38:5                                         media-query()
+    ../../../../minima-2.5.1/_sass/minima/_base.scss 186:3   @import
+    minima.scss 48:3                                         @import
+    /Users/rashaalrefai/frontend2/assets/main.scss 1:9       root stylesheet
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 2) or calc($spacing-unit / 2)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+190 │     padding-left: $spacing-unit / 2;
+    │                   ^^^^^^^^^^^^^^^^^
+    ╵
+    ../../../../minima-2.5.1/_sass/minima/_base.scss 190:19  @content
+    minima.scss 38:5                                         media-query()
+    ../../../../minima-2.5.1/_sass/minima/_base.scss 186:3   @import
+    minima.scss 48:3                                         @import
+    /Users/rashaalrefai/frontend2/assets/main.scss 1:9       root stylesheet
+DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($spacing-unit, 3) or calc($spacing-unit / 3)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+    ╷
+244 │     padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    │               ^^^^^^^^^^^^^^^^^
+    ╵
+    ../../../../minima-2.5.1/_sass/minima/_base.scss 244:15  @import
+    minima.scss 48:3                                         @import
+    /Users/rashaalrefai/frontend2/assets/main.scss 1:9       root stylesheet
+DEPRECATION WARNING: Sass's behavior for declarations that appear after nested
+rules will be changing to match the behavior specified by CSS in an upcoming
+version. To keep the existing behavior, move the declaration above the nested
+rule. To opt into the new behavior, wrap the declaration in `& {}`.
+
+More info: https://sass-lang.com/d/mixed-decls
+
+   ╷
+95 │ ┌       &:not(:last-child) {
+96 │ │         margin-right: 0;
+97 │ │       }
+   │ └─── nested rule
+98 │         margin-left: 20px;
+   │         ^^^^^^^^^^^^^^^^^ declaration
+   ╵
+    ../../../../minima-2.5.1/_sass/minima/_layout.scss 98:7  @content
+    minima.scss 38:5                                         media-query()
+    ../../../../minima-2.5.1/_sass/minima/_layout.scss 49:3  @import
+    minima.scss 49:3                                         @import
+    /Users/rashaalrefai/frontend2/assets/main.scss 1:9       root stylesheet
+WARNING: 6 repetitive deprecation warnings omitted.
+Run in verbose mode to see all warnings.
+                    ...done in 0.350074 seconds.
+                    
