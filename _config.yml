@@ -11,4 +11,4 @@ exclude:
   - .server_log.txt
 include:
   - assets
-  - game.html
+  - game.md

@@ -99,9 +99,9 @@ Run in verbose mode to see all warnings.
  Auto-regeneration: enabled for '/Users/rashaalrefai/frontend2'
     Server address: http://127.0.0.1:4101/frontend_2026/
   Server running... press ctrl-c to stop.
-[2025-06-01 13:40:21] ERROR '/assets/game/game.html' not found.
+[2025-06-01 13:40:21] ERROR '/assets/game/game.md' not found.
       Regenerating: 1 file(s) changed at 2025-06-01 14:01:51
-                    game.html
+                    game.md
        Jekyll Feed: Generating feed for posts
 DEPRECATION WARNING: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
 
