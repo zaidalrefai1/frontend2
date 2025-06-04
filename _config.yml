@@ -1,14 +1,3 @@
-title: Frontend 2026
-description: >-
-  A DNA lab mini-game served with Jekyll.
-baseurl: "/frontend_2026"
-url: "http://127.0.0.1:4101"
-theme: minima
-exclude:
-  - README.md
-  - Makefile
-  - .server_pid
-  - .server_log.txt
-include:
-  - assets
-  - game.md
+title: BioGame
+baseurl: "/frontend2"
+url: "http://localhost:4100"

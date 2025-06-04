@@ -1,7 +1,3 @@
-# ===============================
-# 📁 biogame-frontend/Makefile
-# ===============================
-
 # Configuration
 PORT ?= 4100
 REPO_NAME ?= biogame-frontend
@@ -20,7 +16,7 @@ default: server
 	PID=$$!; \
 	echo "Server PID: $$PID"; \
 	sleep 2; \
-	open http://localhost:$(PORT)/game.html || xdg-open http://localhost:$(PORT)/game.html || echo "Open game.html manually."
+	open http://localhost:$(PORT)/frontend2/home/ || xdg-open http://localhost:$(PORT)/frontend2/home/ || echo "Open frontend2/home/ manually."
 
 # Start static file server
 server: stop
@@ -36,11 +32,18 @@ stop:
 	@lsof -ti :$(PORT) | xargs kill >/dev/null 2>&1 || true
 	@rm -f $(LOG_FILE)
 
-# Open browser to game.html
+# Open browser to frontend2/home/
 open:
-	@open http://localhost:$(PORT)/game.html || xdg-open http://localhost:$(PORT)/game.html || echo "Open manually if not supported."
+	@open http://localhost:$(PORT)/frontend2/home/ || xdg-open http://localhost:$(PORT)/frontend2/home/ || echo "Open manually if not supported."
 
 # Refresh
 refresh:
 	@make stop
 	@make default
+
+clean:
+	rm -rf _site
+	rm -rf .jekyll-cache
+
+build:
+	bundle exec jekyll build
