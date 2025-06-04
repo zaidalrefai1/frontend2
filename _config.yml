@@ -1,9 +1,10 @@
+# _config.yml
 title: Biogame
-baseurl: ""            # blank for local development
-url: ""                # empty for local builds
-permalink: pretty      # enables trailing slashes (e.g., /hub/)
+baseurl: "" # blank for local development
+url: ""    # empty for local builds
+permalink: pretty # enables trailing slashes (e.g., /hub/)
 
-markdown: kramdown
+markdown: Kramdown
 
 exclude:
   - Makefile
@@ -13,9 +14,13 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
+# ADD THIS SECTION BELOW THE EXCLUDE LIST
+include:
+  - assets # This line tells Jekyll to explicitly include the assets folder
+
 defaults:
   - scope:
       path: ""
-      type: "pages"
+    type: "pages"
     values:
       layout: default

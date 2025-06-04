@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DNA Forest</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/assets/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Forest</title>
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header>
-    <h1><a href="/">Biogame</a></h1>
-  </header>
+    <header>
+        <h1><a href="/">Biogame</a></h1>
+    </header>
+    <main>
+        <canvas id="forestCanvas" width="800" height="600"></canvas>
 
-  <main>
-    <h1>DNA Forest</h1>
-<canvas id="forestCanvas" width="800" height="600"></canvas>
-<script src="/assets/forest.js"></script>
+<p><button id="backToHubButton">Back to Hub</button></p>
+
+<script type="module" src="/assets/game/forest.js"></script>
 
 
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Biogame</p>
-  </footer>
+    </main>
+    <footer>
+        <p>&copy; 2025 Biogame</p>
+    </footer>
 </body>
 </html>

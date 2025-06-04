@@ -1,9 +1,14 @@
 ---
 layout: default
 title: DNA Lab
-permalink: /dna_lab/
+scripts:
+  - /assets/game/lab.js
 ---
 
-<h1>DNA Lab</h1>
 <canvas id="labCanvas" width="800" height="600"></canvas>
-<script src="{{ '/assets/lab.js' | relative_url }}"></script>
+
+<p>
+    <button id="backToHubButton">Back to Hub</button>
+    <button id="submitButton">Submit</button> </p>
+
+<script type="module" src="{{ '/assets/game/lab.js' | relative_url }}"></script>

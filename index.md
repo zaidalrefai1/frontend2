@@ -1,10 +1,15 @@
 ---
 layout: default
-title: Home
+title: Biogame - Start
+scripts:
+  - /assets/game/start.js # Ensure this links to your start.js
 ---
 
-# Welcome to Biogame
+<div class="start-page-content">
+    <h1>Welcome to Biogame!</h1>
+    <p>Embark on an epic adventure through the microscopic world.</p>
+    <p>Use WASD or Arrow Keys to move your character.</p>
+    <button id="startGameButton">Start Game</button>
+</div>
 
-![Example Image]({{ site.baseurl }}/assets/img/example.png)
-
-[Go to Hub]({{ site.baseurl }}/hub/)
+<script type="module" src="{{ '/assets/game/start.js' | relative_url }}"></script>

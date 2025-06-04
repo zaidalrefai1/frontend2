@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DNA Lab</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/assets/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Lab</title>
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <header>
-    <h1><a href="/">Biogame</a></h1>
-  </header>
+    <header>
+        <h1><a href="/">Biogame</a></h1>
+    </header>
+    <main>
+        <canvas id="labCanvas" width="800" height="600"></canvas>
 
-  <main>
-    <canvas id="labCanvas" width="800" height="600"></canvas>
-<script src="/assets/lab.js"></script>
+<p>
+    <button id="backToHubButton">Back to Hub</button>
+    <button id="submitButton">Submit</button> <!-- NEW SUBMIT BUTTON -->
+</p>
+
+<script type="module" src="/assets/game/lab.js"></script>
 
 
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Biogame</p>
-  </footer>
+    </main>
+    <footer>
+        <p>&copy; 2025 Biogame</p>
+    </footer>
 </body>
 </html>

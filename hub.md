@@ -5,4 +5,4 @@ permalink: /hub/
 ---
 
 <canvas id="hubCanvas" width="800" height="600"></canvas>
-<script src="{{ '/assets/hub.js' | relative_url }}"></script>
+<script type="module" src="{{ '/assets/game/hub.js' | relative_url }}"></script>

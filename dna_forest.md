@@ -1,9 +1,12 @@
 ---
 layout: default
 title: DNA Forest
-permalink: /dna_forest/
+scripts:
+  - /assets/game/forest.js
 ---
 
-<h1>DNA Forest</h1>
 <canvas id="forestCanvas" width="800" height="600"></canvas>
-<script src="{{ '/assets/forest.js' | relative_url }}"></script>
+
+<button id="backToHubButton">Back to Hub</button>
+
+<script type="module" src="{{ '/assets/game/forest.js' | relative_url }}"></script>
