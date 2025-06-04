@@ -16,7 +16,7 @@ default: server
 	PID=$$!; \
 	echo "Server PID: $$PID"; \
 	sleep 2; \
-	open http://localhost:$(PORT)/home/ || xdg-open http://localhost:$(PORT)/home/ || echo "Open manually."
+	open http://localhost:$(PORT)/frontend2/ || xdg-open http://localhost:$(PORT)/frontend2/ || echo "Open manually."
 
 # Start static file server
 server: stop
@@ -32,9 +32,8 @@ stop:
 	@lsof -ti :$(PORT) | xargs kill >/dev/null 2>&1 || true
 	@rm -f $(LOG_FILE)
 
-# Open browser to frontend2/home/
 open:
-	@open http://localhost:$(PORT)/home/ || xdg-open http://localhost:$(PORT)/home/ || echo "Open manually if not supported."
+	@open http://localhost:$(PORT)/frontend2/ || xdg-open http://localhost:$(PORT)/frontend2/ || echo "Open manually if not supported."
 
 # Refresh
 refresh:
