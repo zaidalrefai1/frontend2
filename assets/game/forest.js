@@ -14,9 +14,27 @@ class ForestScene {
         this.ctx.drawImage(this.mapImage, 0, 0, this.canvas.width, this.canvas.height);
       };
   
-      this.canvas.addEventListener('click', () => {
-        window.location.href = '/frontend2/hub/';
+      this.canvas.addEventListener('click', async () => {
+        await this.saveStateAndReturn();
       });
+    }
+  
+    async saveStateAndReturn() {
+      const response = await fetch('http://localhost:5000/api/state');
+      const state = await response.json();
+  
+      const updatedState = {
+        ...state,
+        location: "hub"
+      };
+  
+      await fetch('http://localhost:5000/api/state', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedState)
+      });
+  
+      window.location.href = '/frontend2/hub/';
     }
   }
   

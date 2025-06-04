@@ -13,8 +13,38 @@ class HubScene {
   
       this.keys = {};
   
+      this.loadState();
       this.initControls();
       this.gameLoop();
+    }
+  
+    async loadState() {
+      try {
+        const res = await fetch('http://localhost:5000/api/state');
+        const state = await res.json();
+        if (state.location === "hub" && state.player) {
+          this.player = { ...this.player, ...state.player };
+        }
+      } catch (e) {
+        console.error('Failed to load game state', e);
+      }
+    }
+  
+    async saveState(newLocation) {
+      const state = {
+        location: newLocation,
+        player: { x: this.player.x, y: this.player.y },
+      };
+  
+      try {
+        await fetch('http://localhost:5000/api/state', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(state)
+        });
+      } catch (e) {
+        console.error('Failed to save game state', e);
+      }
     }
   
     initControls() {
@@ -30,10 +60,15 @@ class HubScene {
   
       // Collision Zones
       if (this.player.x > 700 && this.player.y < 100) {
-        window.location.href = '/frontend2/forest/';
+        this.saveState("forest").then(() => {
+          window.location.href = '/frontend2/forest/';
+        });
       }
+  
       if (this.player.x < 100 && this.player.y > 400) {
-        window.location.href = '/frontend2/lab/';
+        this.saveState("lab").then(() => {
+          window.location.href = '/frontend2/lab/';
+        });
       }
     }
   
