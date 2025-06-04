@@ -1,49 +1,20 @@
-class LabScene {
-  constructor(canvasId) {
-    this.canvas = document.getElementById(canvasId);
-    this.ctx = this.canvas.getContext("2d");
-
-    this.mapImage = new Image();
-    this.mapImage.src = "/assets/dna_lab.png";
-
-    this.playerImage = new Image();
-    this.playerImage.src = "/assets/player.png";
-
-    this.player = { x: 100, y: 100, speed: 4 };
-    this.keys = {};
-
-    window.addEventListener("keydown", (e) => {
-      this.keys[e.key] = true;
-      if (e.key === "Escape") {
-        window.location.href = "/hub/";
-      }
-    });
-
-    window.addEventListener("keyup", (e) => this.keys[e.key] = false);
-
-    this.mapImage.onload = () => this.loop();
+class LabGame {
+  constructor() {
+      this.mapImage = new Image();
+      this.playerImage = new Image();
+      this.mapImage.src = "/frontend2/assets/dna_lab.png"; // Updated path
+      this.playerImage.src = "/frontend2/assets/player.png"; // Updated path
   }
 
-  update() {
-    if (this.keys["ArrowUp"]) this.player.y -= this.player.speed;
-    if (this.keys["ArrowDown"]) this.player.y += this.player.speed;
-    if (this.keys["ArrowLeft"]) this.player.x -= this.player.speed;
-    if (this.keys["ArrowRight"]) this.player.x += this.player.speed;
+  start() {
+      console.log("Starting DNA Lab...");
+      // Game logic here
   }
 
-  draw() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.drawImage(this.mapImage, 0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.drawImage(this.playerImage, this.player.x, this.player.y, 50, 50);
-  }
-
-  loop() {
-    this.update();
-    this.draw();
-    requestAnimationFrame(() => this.loop());
+  navigateToHub() {
+      window.location.href = "/frontend2/hub/"; // Updated navigation
   }
 }
 
-window.onload = () => {
-  new LabScene("labCanvas");
-};
+const labGame = new LabGame();
+labGame.start();

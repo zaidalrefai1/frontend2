@@ -1,5 +1,5 @@
 # Configuration
-PORT ?= 4100
+PORT ?= 4000
 REPO_NAME ?= biogame-frontend
 LOG_FILE = /tmp/frontend$(PORT).log
 
