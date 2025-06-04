@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Home
-permalink: /frontend2/
 ---
 
-<h1>Welcome to the Game</h1>
-<button onclick="window.location.href='{{ '/hub/' | relative_url }}'">Start</button>
+# Welcome to Biogame
+
+![Example Image]({{ site.baseurl }}/assets/img/example.png)
+
+[Go to Hub]({{ site.baseurl }}/hub/)

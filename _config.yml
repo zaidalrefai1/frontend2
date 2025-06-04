@@ -1,7 +1,7 @@
 title: Biogame
-baseurl: "/frontend2" 
-url: ""                # leave empty for local builds
-permalink: pretty      # enables trailing slashes (e.g., /hub/ instead of /hub.html)
+baseurl: ""            # blank for local development
+url: ""                # empty for local builds
+permalink: pretty      # enables trailing slashes (e.g., /hub/)
 
 markdown: kramdown
 
